@@ -1,0 +1,12 @@
+{
+    "ERROR_MSG":{
+        "INVALID_PAYLOAD":{
+            "MESSAGE":"Invalid User Data Payloads",
+            "ERROR_CODE":"LEGAL_DIAL_USERS_101"
+        }
+    },
+    "SUCCESS_MSG":{
+        "POST_SUCCESS_MSG":"Document Created Successfully",
+        "GET_SUCCESS_MSG":"Document Data Fetched Successfully"
+    }
+}
