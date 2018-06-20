@@ -1,0 +1,226 @@
+// @import "../../../../theme/scss/variables.scss";
+
+// h1
+// {
+//     margin:0;
+// }
+
+// .margin-top10
+// {
+//     margin-top:10px;
+// }
+
+// .navbar-default{
+//     height: 125px;
+//     background-color: $header-bg-color;
+//  }
+
+//  .navbar-default a{
+//      color: $pri-bg;
+//  }
+//  .navbar-default a:hover{
+//     color: $pri-bg;
+//     text-decoration: underline;
+//  }
+//  .white-lbl{
+//      color: $pri-bg;
+//  }
+//  .top-navigation{
+//     left:0;
+//     right:0;
+//     height: auto;
+//     width:102%;
+//     background-color: grey;
+//     color: white;
+// }
+// .branding-bar {
+//     background: #06345b;
+//     height: auto;
+//     // padding: 10px;
+//     display: inline-block;
+//     width: 100%;
+// }
+// .support-link{
+//     color:white;
+//     font-size: 16px;
+// }
+// .header-links{
+//     display:block;
+//     margin-top: 4%;
+// }
+// .branding-bar-header{
+//     color: white;
+//     margin-top:6%;
+//     display: inline-block;
+// }
+// .header-dropdown{
+// display: inline-block;
+// background-color: #06345b;
+// color: white;
+// border-top: 0px;
+// border-left: 0px;
+// border-right: 1px;
+// margin-left: 2%;
+// width:auto;
+// }
+// .search-glyphicon,.server-glyphicon{
+//     margin-right:5%;
+// }
+
+// @media screen and (max-width: 425px) and (min-width: 320px) {
+//     .support-link {
+//         color: white;
+//         font-size: 8px;
+//     }
+//     h2{
+//         font-size: 25px;
+//     }
+// }
+
+
+// .evac-main-header
+// {
+//     h1
+//     {
+//         margin: 0;
+//     }
+
+
+//     .vfs-logo
+//     {
+
+//         img
+//         {
+//             width:200px;
+//         }
+//     }
+
+//     .select-visa
+//     {
+
+
+//         ::ng-deep .mat-form-field-infix
+//         {
+//             border:none;
+//             color: #FFFFFF;
+//         }
+//         ::ng-deep .mat-form-field-empty.mat-form-field-placeholder
+//         {
+//             color:#FFFFFF;
+//         }
+//         ::ng-deep .mat-select-value
+//         {
+//             color:#FFFFFF;
+//         }
+//         ::ng-deep .mat-select-arrow:after, ::ng-deep .mat-select-arrow
+//         {
+//             background: #FFFFFF;
+//         }
+//     }
+//     select
+//     {
+//         background: none;
+//         border: none;
+//     }
+//     option
+//     {
+//         color: #000000;
+//     }
+
+//     .social-header
+//   {
+//       .fb_icon
+//       {
+//           width:10px;
+//       }
+//       .twitter_icon
+//       {
+//           width: 18px;
+//       }
+//       .linkedin_icon
+//       {
+//           width:16px;
+//       }
+//       .navbar
+//       {
+//           margin-bottom: 0px;
+//           padding-top:15px;
+//           .navbar-nav
+//           {
+//               float: right;
+//           }
+//           li
+//           {
+//               color:#FFFFFF;
+//           }
+//           a
+//           {
+//               color:#FFFFFF;
+//           }
+//           a:hover
+//           {
+//               background: none;
+//           }
+//           .seperator
+//           {
+//             padding-top:15px;
+//             padding-bottom:15px;
+//           }
+//           .change-language
+//           {
+//               padding-top:12px;
+//               padding-bottom:15px;
+//               padding-left:10px;
+//           }
+//       }
+//         ::ng-deep .mat-form-field-infix
+//             {
+//                 border:none;
+//                 width:130px;
+//             }
+//         ::ng-deep .mat-form-field-type-mat-select .mat-form-field-placeholder
+//         {
+//             margin-top:0px;
+//         }
+//         ::ng-deep .mat-option.mat-active {
+//             background: rgba(0,0,0,.04);
+//             color: rgba(0,0,0,.87);
+//         }
+    
+//   }
+
+//   ::ng-deep .mat-form-field-infix
+//     {
+//         border:none;
+//     }
+
+//     ::ng-deep .mat-select-value, 
+//     ::ng-deep .mat-form-field-can-float.mat-form-field-should-float .mat-form-field-placeholder,
+//     ::ng-deep .mat-form-field-type-mat-select .mat-form-field-placeholder
+//     {
+//         color:#FFFFFF;
+//         margin-top: 3px;
+//     }
+//     ::ng-deep .mat-select-arrow, ::ng-deep .mat-select-arrow:after
+//     {
+//         background:#FFFFFF;
+//     }
+
+//     ::ng-deep .mat-select-value-text
+//     {
+//         margin-left:0;
+//     }
+//     ::ng-deep .mat-select-arrow
+//     {
+//         margin: -7px 12px 0 0;
+//     }
+
+//     ::ng-deep .mat-form-field-wrapper
+//     {
+//         padding-bottom:0;
+//     }
+  
+//   }
+
+
+
