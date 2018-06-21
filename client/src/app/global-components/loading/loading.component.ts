@@ -16,13 +16,13 @@ export class LoadingComponent implements OnInit {
   }
 
   onOpenModal() {
-    $('#loadingModal').modal('show');
+    //$('#loadingModal').modal('show');
   }
 
   onCloseModal() {
-    $('#loadingModal').modal('hide');
-    $('.modal-backdrop').remove();
-    $('.modal-backdrop').addClass('hide');
+    // $('#loadingModal').modal('hide');
+    // $('.modal-backdrop').remove();
+    // $('.modal-backdrop').addClass('hide');
   }
 
 }

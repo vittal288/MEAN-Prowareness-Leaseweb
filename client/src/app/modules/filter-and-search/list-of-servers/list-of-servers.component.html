@@ -1,0 +1,48 @@
+<!-- <ul style="height: 300px; overflow-y: auto">
+  <li *lazyFor="let item of servers" style="height: 10px;">
+    {{item.model}}
+  </li>
+</ul> -->
+
+
+<section class="section-items section-servers">
+  <div class="card" *ngFor="let server of servers;let i=index">
+    <div class="card__side">
+      <!-- FRONT SIDE-->
+      <div class="card__side card__side--front">
+        <!-- <a href="#" class="btn btn--white">Details</a> -->
+        <div class="card__details">
+          <div class="card__details-labels">
+            <span class="card__details-labels--1">
+              <i class="icon-basic-server-cloud"></i>
+              {{server.model}}
+            </span>
+            <span class="card__details-labels--2">
+              <i class="icon-basic-geolocalize-05"></i>
+              {{server.location}}1</span>
+            <!-- need to wrap the text-->
+          </div>
+          <div class="card__details-badges">
+            <span class="badges badges-primary card__details-badges--1"> RAM:{{server.ram.memory}} {{server.ram.unit}} {{server.ram.type}}</span>
+            <span class="badges badges-tertiary card__details-badges--2">Hard Drive: {{server.hdd.memory}} {{convertToInt(server.hdd.unit) * convertToInt(server.hdd.count)}} {{server.type}}</span>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- BACK SIDE-->
+      <div class="card__side card__side--back card__side--back-1">
+        <div class="card__cta">
+          <div class="card__cta__price-box">
+            <p class="card__cta__price-box-value">Price: {{server.price.currencySymbol }} {{convertCentToEur(server.price.amountCents)}}</p>
+            <p class="card__cta__price-box-btn">
+                <a [routerLink]="['serverDetails',i]" 
+                    (click)="onServerDetails()" 
+                    class="btn btn--white">Server Details</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

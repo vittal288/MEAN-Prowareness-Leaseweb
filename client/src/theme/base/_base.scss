@@ -1,0 +1,24 @@
+// /* universal selector*/
+// *,
+// *::after,
+// *::before
+// {
+//     margin: 0;
+//     padding: 0;
+//       /*
+//         1. for box modelling margin and padding will not add to calculate total width and total height of the comp
+//         2. By default box sizing will not inherit so we force full inheriting to all elements
+//       */
+//     box-sizing: inherit;
+   
+// }
+
+// html{
+//     /*defined 10px to calculate rem value easily and converting all pixel to rem for RWD and 1rem = 10px  and just update the this style in different media queries to handle RWD*/
+//     /* if you fix the global font-size in pixel then we over riding the browser font size and it is not good practice, instead use % 
+//         default browser font size is 16px means 100% 
+//         but we need 10px as the standard unit so % conversion ratio is 10/16 = 0.625%
+//     */
+//     font-size: 62.5%;
+// }
+

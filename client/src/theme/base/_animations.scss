@@ -1,0 +1,43 @@
+// /*animation */
+// @keyframes moveInLeft{
+//     0%{
+//         opacity: 0;
+//         /*from its original place to go back 100px from x direction */
+//         transform: translateX(-10rem);
+//     }
+//     80%{
+//         color: rgba(0, 255, 234, 0.993);
+//         transform: translateX(1rem);
+//     }
+//     100%{
+//         opacity: 1;
+//         transform: translateX(0px);
+//     }
+// }
+
+// @keyframes moveInRight{
+//     0%{
+//         opacity: 0;
+//         /*from its original place to go front 100px from x direction */
+//         transform: translateX(10rem);
+//     }
+
+//     80%{
+//         transform:translateX(-1rem)
+//     }
+//     100%{
+//         opacity:1 ;
+//         transform: translateX(0px);
+//     }
+// }
+
+// @keyframes moveInBottom{
+//     0%{
+//         opacity: 0;
+//         transform: translateY(3rem);
+//     }
+//     100%{
+//         opacity: 1;
+//         transform: translateY(0px);
+//     }
+// }

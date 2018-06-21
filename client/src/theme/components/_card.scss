@@ -1,0 +1,104 @@
+.card{
+    //FUNCTIONALITY 
+    // perspective: 150rem;
+    // -moz-perspective: 150rem;
+    cursor: pointer;
+    position: relative;
+    height: 75px;
+    border-radius: 10px;
+    margin-bottom: 40px;
+
+    
+    &__side{
+        color: #fff;
+        font-size: 10px;
+        height: 75px;
+        transition: all .8s ease;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        backface-visibility: hidden;
+        border-radius: 10px;
+        
+        &--front {
+            background-image: linear-gradient(to right bottom, $color-secondary-light,$color-secondary-dark);
+            box-shadow: 0 .5rem 5px rgba($color-grey-dark,.6);
+        }
+        
+        &--back{
+            transform: rotateY(180deg);
+            box-shadow: 0 10px 40px rgba($color-grey-dark,.6);
+            background-image: linear-gradient(to right bottom, $color-primary-light,$color-primary-dark);
+        }
+    }
+
+    &:hover &__side--front{
+        transform: rotateX(-180deg);
+    }
+
+    &:hover &__side--back{
+        transform: rotateX(0deg);
+    }
+
+
+    &__details{
+        padding:0px 10px 30px 10px;
+        &-labels{
+            display:inline;
+            &--1{
+                font-weight: 700;
+                font-size: 1.5rem;
+            }
+            &--2{
+                font-weight: 400;
+                font-size: 1rem;
+                float: right;
+                margin-top: 4px;
+            }
+        }
+        &-badges{
+            margin-top: 5px;
+
+            &--1{
+                float: left;
+            }
+
+            &--2{
+                float: right;
+            }
+        }
+
+       
+    }
+
+   
+
+
+    // BACK SIDE STYLING 
+    &__cta{
+        // position: absolute;
+        // top: 10%;
+        // left: 10%;
+        // transform: translate(-50%, -50%);
+        // width: 90%;
+        // text-align: center;
+
+        &__price-box{
+           
+            text-align: center;
+            color: $color-white;
+            // margin-bottom: 2rem;
+
+            &-value{
+                font-size: 3rem;
+                font-weight: 100;
+            }
+            &-btn{
+                float: right;
+                margin-top: -65px;
+                margin-right: 10px;
+            }
+        }
+    }
+}

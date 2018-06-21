@@ -1,0 +1,18 @@
+.badges{
+    padding:4px 8px 4px 8px;;
+    border-radius: 20px;
+    color: $color-white;
+    font-size: 14px;
+    font-weight: 700;
+    &-primary{
+        background-image: linear-gradient(to right bottom, $color-primary-light,$color-primary-dark);
+    }
+
+    &-secondary{
+        background-image: linear-gradient(to right bottom, $color-secondary-light,$color-secondary-dark);
+    }
+
+    &-tertiary{
+        background-image: linear-gradient(to right bottom, $color-tertiary-light,$color-tertiary-dark);
+    }
+}
