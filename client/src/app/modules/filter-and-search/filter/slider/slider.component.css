@@ -1,0 +1,12 @@
+mat-slider {
+    width: 100%;
+}
+
+::ng-deep .mat-slider-horizontal .mat-slider-thumb-label{
+  padding: 20px;
+  top:-48px !important;
+}
+
+/* .mat-slider-horizontal .mat-slider-thumb-label{
+
+} */

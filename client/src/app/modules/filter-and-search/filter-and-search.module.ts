@@ -1,6 +1,7 @@
 // @@ CORE MODULE/COMPONENTS
-import { NgModule, Inject, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 // COMPONENTS
 import { FilterAndSearchComponent } from './filter-and-search.component';
@@ -16,6 +17,11 @@ import { LazyForModule } from './../../global-components/modules/lazyFor.module'
 // @@ SERVICES
 import { FilterAndSearchService } from './filter-and-search.service';
 import { ServerDetailsComponent } from './server-details/server-details.component';
+import { FilterComponent } from './filter/filter.component';
+import { SliderComponent } from './filter/slider/slider.component';
+import { RamFilterComponent } from './filter/ram-filter/ram-filter.component';
+import { HddFilterComponent } from './filter/hdd-filter/hdd-filter.component';
+import { LocationFilterComponent } from './filter/location-filter/location-filter.component';
 
 
 @NgModule({
@@ -23,13 +29,19 @@ import { ServerDetailsComponent } from './server-details/server-details.componen
     FilterAndSearchComponent,
     ListOfServersComponent,
     ItemServerComponent,
-    ServerDetailsComponent
+    ServerDetailsComponent,
+    FilterComponent,
+    SliderComponent,
+    RamFilterComponent,
+    HddFilterComponent,
+    LocationFilterComponent
   ],
   imports: [
     FilterAndSearchRoutingModule,
     CommonModule,
     NGMaterialImportsModule,
-    LazyForModule
+    LazyForModule,
+    FormsModule
   ],
   exports: [
     FilterAndSearchComponent
@@ -39,8 +51,8 @@ import { ServerDetailsComponent } from './server-details/server-details.componen
     FilterAndSearchService
   ]
 })
-export class FilterAndSearchModule { 
+export class FilterAndSearchModule {
   constructor() {
-   // 
+    // 
   }
 }

@@ -1,0 +1,13 @@
+<mat-card>
+    <mat-card-content>
+      <h5 class="example-h5">Select RAM</h5>
+      <section class="example-section">
+        <mat-checkbox 
+          *ngFor="let ram of rams;let ind =index" 
+          (change)="onChange($event,ind)"
+          class="example-margin" 
+          [value]="ram"
+          >{{ram}} GB</mat-checkbox>
+      </section>
+    </mat-card-content>
+</mat-card>

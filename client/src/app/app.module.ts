@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+// import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 
 // MODULES
@@ -26,7 +26,7 @@ import { AppComponent } from './app.component';
 import { HTTPCommonService } from './global-components/http-interceptor/app-http-common.service';
 import { NoopInterceptor } from './global-components/http-interceptor/app-httpinterceptor.service';
 import { GlobalErrorHandler, GlobalHTTPErrorHanlder } from './global-components/global-error-handler/global-error-handler';
-import { ToasterService } from './modules/utility';
+import { ToasterService, UtilityService } from './modules/utility';
 
 
 
@@ -39,14 +39,14 @@ import { ToasterService } from './modules/utility';
   ],
   imports: [
     AppRoutingModule,
-    BrowserModule,
-    NGMaterialImportsModule,
     BrowserAnimationsModule,
-    NoopAnimationsModule,
+    BrowserModule,
+    // NoopAnimationsModule,
     CoreModule,
     FilterAndSearchModule,
     HttpClientModule,
-    LazyForModule
+    LazyForModule,
+    NGMaterialImportsModule
     // SharedModule.forRoot(),
   ],
   providers: [
@@ -59,7 +59,8 @@ import { ToasterService } from './modules/utility';
     GlobalHTTPErrorHanlder,
     GlobalErrorHandler,
     ToasterService,
-    LoadingComponent
+    LoadingComponent,
+    UtilityService
   ],
   bootstrap: [AppComponent]
 })
