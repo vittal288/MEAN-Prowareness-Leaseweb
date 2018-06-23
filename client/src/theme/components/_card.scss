@@ -1,14 +1,12 @@
 .card{
     //FUNCTIONALITY 
-    // perspective: 150rem;
-    // -moz-perspective: 150rem;
     cursor: pointer;
     position: relative;
     height: 75px;
     border-radius: 10px;
     margin-bottom: 40px;
 
-    
+ 
     &__side{
         color: #fff;
         font-size: 10px;
@@ -72,24 +70,13 @@
        
     }
 
-   
-
 
     // BACK SIDE STYLING 
     &__cta{
-        // position: absolute;
-        // top: 10%;
-        // left: 10%;
-        // transform: translate(-50%, -50%);
-        // width: 90%;
-        // text-align: center;
-
         &__price-box{
            
             text-align: center;
             color: $color-white;
-            // margin-bottom: 2rem;
-
             &-value{
                 font-size: 3rem;
                 font-weight: 100;

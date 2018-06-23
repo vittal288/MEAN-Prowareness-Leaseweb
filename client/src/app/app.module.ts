@@ -27,7 +27,6 @@ import { AppComponent } from './app.component';
 import { HTTPCommonService } from './global-components/http-interceptor/app-http-common.service';
 import { NoopInterceptor } from './global-components/http-interceptor/app-httpinterceptor.service';
 import { GlobalErrorHandler, GlobalHTTPErrorHanlder } from './global-components/global-error-handler/global-error-handler';
-import { ToasterService, UtilityService } from './modules/utility';
 
 
 
@@ -55,9 +54,7 @@ import { ToasterService, UtilityService } from './modules/utility';
       multi: true,
     },
     GlobalHTTPErrorHanlder,
-    GlobalErrorHandler,
-    ToasterService,
-    UtilityService
+    GlobalErrorHandler
   ],
   bootstrap: [AppComponent]
 })

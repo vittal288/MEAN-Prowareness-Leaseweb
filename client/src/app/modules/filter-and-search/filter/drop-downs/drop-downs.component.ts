@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 
 import { FilterAndSearchService } from './../../filter-and-search.service';
 
-import { UtilityService } from './../../../utility';
 
 @Component({
   selector: 'app-drop-downs',
@@ -16,8 +15,7 @@ export class DropDownsComponent implements OnInit {
 
   public selectedLocation: string;
   public selectedHdd: string;
-  constructor(private filterAndSearchService: FilterAndSearchService,
-    private utilityService: UtilityService) { }
+  constructor(private filterAndSearchService: FilterAndSearchService) { }
 
   ngOnInit() {
     this.locations = this.filterAndSearchService.locations;

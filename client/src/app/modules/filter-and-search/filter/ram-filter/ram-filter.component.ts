@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 
 
 import { FilterAndSearchService } from './../../filter-and-search.service';
-import { UtilityService } from './../../../utility';
 
 @Component({
   selector: 'app-ram-filter',
@@ -15,8 +14,7 @@ export class RamFilterComponent implements OnInit {
   public selectedRams =[];
 
  
-  constructor(private filterAndSearchService : FilterAndSearchService,
-              private utilityService: UtilityService) { }
+  constructor(private filterAndSearchService : FilterAndSearchService) { }
 
   ngOnInit() {
     this.rams = this.filterAndSearchService.ramSizes;

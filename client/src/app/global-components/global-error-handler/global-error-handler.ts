@@ -11,7 +11,6 @@ import { BadInputError } from './bad-input-error';
 import { NotFoundError } from './not-found-error';
 import { InternalServerError } from './server-error';
 
-import { ToasterService } from './../../modules/utility';
 import { HTTPError } from './../../models/global/http-error.model';
 
 
@@ -51,7 +50,7 @@ export class GlobalErrorHandler extends ErrorHandler {
 
 export class GlobalHTTPErrorHanlder {
 
-  constructor(@Inject(ToasterService) private toasterService: ToasterService) {
+  constructor() {
 
   }
 
@@ -64,20 +63,19 @@ export class GlobalHTTPErrorHanlder {
       const err = body || JSON.stringify(body);
       errMsg = `${error.status} - ${error.statusText || ''} ${err}`;
       console.error('%c ERROR !!! ', 'background: #FF0000; color: #FFF', errMsg);
-      //this.toasterService.showToaster('error', 'ERROR', errMsg);
     } else {
 
       if (error.status === 404) {
-        //this.toasterService.showToaster('error', 'L1144', 'E301');
+        console.error('%c ERROR !!! ', 'background: #FF0000; color: #FFF', 'PAGE NOT FOUND');
         return Observable.throw(new NotFoundError());
       } else if (error.status === 400) {
-        //this.toasterService.showToaster('error', 'L1144', 'E301');
+        console.error('%c ERROR !!! ', 'background: #FF0000; color: #FFF', 'BAD REQUEST');
         return Observable.throw(new BadInputError(error.error.json()));
       } else if (error.status === 500) {
-        //this.toasterService.showToaster('error', 'L1144', 'E301');
+        console.error('%c ERROR !!! ', 'background: #FF0000; color: #FFF', 'INTERNAL SERVER ERROR');
         return Observable.throw(new InternalServerError());
       } else {
-        //this.toasterService.showToaster('error', error.name, error.message);
+        console.error('%c ERROR !!! ', 'background: #FF0000; color: #FFF', error.message);
         return Observable.throw(new AppError(error));
       }
     }

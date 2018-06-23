@@ -1,7 +1,6 @@
-import { Component, OnInit, Output, EventEmitter} from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 import { FilterAndSearchService } from './../../filter-and-search.service';
-import { UtilityService } from './../../../utility';
 
 
 @Component({
@@ -10,9 +9,8 @@ import { UtilityService } from './../../../utility';
   styleUrls: ['./slider.component.css']
 })
 export class SliderComponent implements OnInit {
-  public value:number;
-  constructor(private filterAndSearchService: FilterAndSearchService,
-              private utilityService: UtilityService) {
+  public value: number;
+  constructor(private filterAndSearchService: FilterAndSearchService) {
     //
   }
 
@@ -23,16 +21,15 @@ export class SliderComponent implements OnInit {
     }
     if (value >= 1024) {
       return Math.round(value / 1000) + 'TB';
-    }else{
+    } else {
       return `${value} GB`;
     }
-    // return value;
   }
 
-  onChange(){
+  onChange() {
     this.filterAndSearchService.selectedFilter['slider'] = this.value;
 
-    this.filterAndSearchService.getServers().subscribe((results)=>{
+    this.filterAndSearchService.getServers().subscribe((results) => {
       this.filterAndSearchService.filteredServers.emit(results);
     });
   }

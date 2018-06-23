@@ -23,9 +23,7 @@ export class NoopInterceptor implements HttpInterceptor {
                     const elapsed = Date.now() - started;
                     const statisticks = `Request for ${req.urlWithParams} took ${elapsed} ms.`;
                     console.log('%c LATENCY INFO !!! ', 'background: #5bc0de; color: #FFF', statisticks);
-                    // this.loadingComponent.onCloseModal();
                     this.slimLoadingBarService.complete();
-                   
                 }
             });
     }
