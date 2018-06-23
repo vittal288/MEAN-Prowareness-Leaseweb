@@ -4,31 +4,29 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import 'rxjs/add/observable/throw';
 import * as StackTrace from 'stacktrace-js';
+import { SlimLoadingBarService } from 'ng2-slim-loading-bar';
 
 import { AppError } from './app-error';
 import { BadInputError } from './bad-input-error';
 import { NotFoundError } from './not-found-error';
 import { InternalServerError } from './server-error';
 
-// import { SharedService } from './../../modules/shared.service';
 import { ToasterService } from './../../modules/utility';
 import { HTTPError } from './../../models/global/http-error.model';
-import { LoadingComponent } from './../loading/loading.component';
 
 
 
 @Injectable()
 export class GlobalErrorHandler extends ErrorHandler {
 
-  constructor(private injector: Injector) {
-    // to call the constructor of base's class
-    // super(true);
+  constructor(private injector: Injector,
+    private slimLoadingBarService: SlimLoadingBarService) {
+
     super();
   }
   handleError(error: any): void {
-    // this.loadingComponent.onCloseModal();
+    this.slimLoadingBarService.complete();
     if (error != null) {
-      // const loggingService = this.injector.get(LoggingService);
       const message = error.message ? error.message : error.toString();
       const location = this.injector.get(LocationStrategy);
       const url = location instanceof PathLocationStrategy ? location.path() : '';
@@ -40,10 +38,7 @@ export class GlobalErrorHandler extends ErrorHandler {
           .map(function (sf) {
             return sf.toString();
           }).join('\n');
-        // this.toasterService.showToaster('error', 'Error', 'Unexpected Error Occurred !!!');
         console.log('%c STACKTRACEJS INFO !!! ', 'background: #5bc0de; color: #FFF', { error, message, url, stack: stackString });
-        // log on the server
-        // loggingService.log({ error, message, url, stack: stackString });
       });
 
       throw error;
@@ -56,12 +51,11 @@ export class GlobalErrorHandler extends ErrorHandler {
 
 export class GlobalHTTPErrorHanlder {
 
-  constructor( @Inject(ToasterService) private toasterService: ToasterService,
-                @Inject(LoadingComponent) private loadingComponent: LoadingComponent) {
+  constructor(@Inject(ToasterService) private toasterService: ToasterService) {
 
   }
 
- 
+
 
   public handleError(error: HTTPError) {
     let errMsg: string;
@@ -72,7 +66,7 @@ export class GlobalHTTPErrorHanlder {
       console.error('%c ERROR !!! ', 'background: #FF0000; color: #FFF', errMsg);
       //this.toasterService.showToaster('error', 'ERROR', errMsg);
     } else {
-      this.loadingComponent.onCloseModal();
+
       if (error.status === 404) {
         //this.toasterService.showToaster('error', 'L1144', 'E301');
         return Observable.throw(new NotFoundError());

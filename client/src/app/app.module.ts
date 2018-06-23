@@ -1,8 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-// import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
+
+
+//VENDOR MODULES
+import {SlimLoadingBarModule} from 'ng2-slim-loading-bar';
 
 // MODULES
 import { AppRoutingModule } from './app-routing.module';
@@ -10,13 +13,12 @@ import { NGMaterialImportsModule } from './ui-components-imports/material-import
 import { CoreModule } from './modules/core/core.module';
 import { FilterAndSearchModule } from './modules/filter-and-search/filter-and-search.module';
 import { LazyForModule } from './global-components/modules/lazyFor.module';
-// import { SharedModule } from './modules/shared.module';
+
 
 
 
 
 // COMPONENTS
-import { LoadingComponent } from './global-components/loading/loading.component';
 import { AppComponent } from './app.component';
 
 
@@ -35,7 +37,6 @@ import { ToasterService, UtilityService } from './modules/utility';
 @NgModule({
   declarations: [
     AppComponent,
-    LoadingComponent
   ],
   imports: [
     AppRoutingModule,
@@ -46,7 +47,8 @@ import { ToasterService, UtilityService } from './modules/utility';
     FilterAndSearchModule,
     HttpClientModule,
     LazyForModule,
-    NGMaterialImportsModule
+    NGMaterialImportsModule,
+    SlimLoadingBarModule.forRoot()
     // SharedModule.forRoot(),
   ],
   providers: [
@@ -59,7 +61,6 @@ import { ToasterService, UtilityService } from './modules/utility';
     GlobalHTTPErrorHanlder,
     GlobalErrorHandler,
     ToasterService,
-    LoadingComponent,
     UtilityService
   ],
   bootstrap: [AppComponent]

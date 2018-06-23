@@ -10,8 +10,8 @@ import { UtilityService } from './../../../utility';
   styleUrls: ['./ram-filter.component.css']
 })
 export class RamFilterComponent implements OnInit {
-  // public rams = [2, 4, 8, 12, 16, 24, 32, 48, 64, 96];
-  public rams = [2, 4, 8, 12, 16, 24, 32, 48, 64, 96];
+ 
+  public rams = [];
   public selectedRams =[];
 
  

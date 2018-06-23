@@ -5,12 +5,11 @@
 </ul> -->
 
 
-<section class="section-items section-servers">
+<section class="section-servers">
   <div class="card" *ngFor="let server of servers;let i=index">
     <div class="card__side">
       <!-- FRONT SIDE-->
       <div class="card__side card__side--front">
-        <!-- <a href="#" class="btn btn--white">Details</a> -->
         <div class="card__details">
           <div class="card__details-labels">
             <span class="card__details-labels--1">
@@ -20,11 +19,10 @@
             <span class="card__details-labels--2">
               <i class="icon-basic-geolocalize-05"></i>
               {{server.location}}1</span>
-            <!-- need to wrap the text-->
           </div>
           <div class="card__details-badges">
             <span class="badges badges-primary card__details-badges--1"> RAM:{{server.ram.memory}} {{server.ram.unit}} {{server.ram.type}}</span>
-            <span class="badges badges-tertiary card__details-badges--2">Hard Drive: {{server.hdd.memory}} {{convertToInt(server.hdd.unit) * convertToInt(server.hdd.count)}} {{server.type}}</span>
+            <span class="badges badges-tertiary card__details-badges--2">Hard Drive: {{server.hdd.memory}} {{convertToInt(server.hdd.unit) * 2}} {{server.hdd.type}}</span>
           </div>
         </div>
       </div>

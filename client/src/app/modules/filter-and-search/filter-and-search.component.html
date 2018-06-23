@@ -1,14 +1,25 @@
-<section>
+<!-- <div>Hello world</div>
+        <button (click)="startLoading()">Start Loading</button>
+        <button (click)="stopLoading()">Stop Loading</button>
+        <button (click)="completeLoading()">Complete Loading</button>
+        <ng2-slim-loading-bar></ng2-slim-loading-bar> -->
+
+<section class="filter-section">
   <app-filter></app-filter>
 </section>
 <section>
   <div class="u-margin-top-small">
     <ul class="list-group">
-      <li class="list-group-item d-flex justify-content-between align-items-center">
+      <li *ngIf="noOfServers !== 0"class="list-group-item d-flex justify-content-between align-items-center">
         Number of Servers Matching Your Filter:
         <span class="badge badge-primary badge-pill">{{noOfServers}}</span>
+      </li>
+      <li *ngIf="noOfServers === 0" class="list-group-item d-flex justify-content-between align-items-center u-margin-bottom-small ">
+        <span class="text-red">No Records !!!</span>
       </li>
     </ul>
   </div>
   <app-list-of-servers [servers]="servers.servers"></app-list-of-servers>
 </section>
+
+

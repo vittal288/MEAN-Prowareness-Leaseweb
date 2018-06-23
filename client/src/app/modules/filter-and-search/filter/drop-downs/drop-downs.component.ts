@@ -10,8 +10,7 @@ import { UtilityService } from './../../../utility';
   styleUrls: ['./drop-downs.component.css']
 })
 export class DropDownsComponent implements OnInit {
-  // public locations = ['AmsterdamAMS-01','AmsterdamAMS-02','AmsterdamAMS-03'];
-  // public hddTypes = ['SSD', 'SATA2', 'SAS'];
+
   public hddTypes = [];
   public locations = [];
 
@@ -26,7 +25,7 @@ export class DropDownsComponent implements OnInit {
   }
 
   onHddSelect(hdd) {
-   
+
     this.filterAndSearchService.selectedFilter['hdd'] = hdd;
 
     this.filterAndSearchService.getServers().subscribe((results) => {

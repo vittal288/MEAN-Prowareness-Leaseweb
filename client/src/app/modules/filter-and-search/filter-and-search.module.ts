@@ -3,6 +3,9 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
+import { SlimLoadingBarModule } from 'ng2-slim-loading-bar';
+
+
 // COMPONENTS
 import { FilterAndSearchComponent } from './filter-and-search.component';
 
@@ -10,8 +13,8 @@ import { FilterAndSearchComponent } from './filter-and-search.component';
 import { FilterAndSearchRoutingModule } from './filter-and-search-routing.module';
 import { NGMaterialImportsModule } from './../../ui-components-imports/material-imports.module';
 import { ListOfServersComponent } from './list-of-servers/list-of-servers.component';
-import { ItemServerComponent } from './list-of-servers/item-server/item-server.component';
 import { LazyForModule } from './../../global-components/modules/lazyFor.module';
+
 
 
 // @@ SERVICES
@@ -31,7 +34,6 @@ import { FilterPipe } from './../../global-components/pipes/filter.pipe';
   declarations: [
     FilterAndSearchComponent,
     ListOfServersComponent,
-    ItemServerComponent,
     ServerDetailsComponent,
     FilterComponent,
     SliderComponent,
@@ -44,7 +46,8 @@ import { FilterPipe } from './../../global-components/pipes/filter.pipe';
     CommonModule,
     NGMaterialImportsModule,
     LazyForModule,
-    FormsModule
+    FormsModule,
+    SlimLoadingBarModule
   ],
   exports: [
     FilterAndSearchComponent

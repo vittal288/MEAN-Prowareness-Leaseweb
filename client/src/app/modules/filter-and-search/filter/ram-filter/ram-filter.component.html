@@ -6,8 +6,7 @@
           *ngFor="let ram of rams | filter;let ind =index" 
           (change)="onChange($event,ind)"
           class="example-margin" 
-          [value]="ram"
-          >{{ram}} GB</mat-checkbox>
+          [value]="ram">{{ram}} GB</mat-checkbox>
       </section>
     </mat-card-content>
 </mat-card>
