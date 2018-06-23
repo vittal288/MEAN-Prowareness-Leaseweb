@@ -1,0 +1,106 @@
+// 
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+
+}
+
+
+
+/*==========  Non-Mobile First Method  ==========*/
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px) {
+
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px) {
+
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+  .header{
+    &__label{
+        font-size: 20px;       
+    }
+  }
+
+  .accordion{
+    &__label-1{
+      font-size: 18px;  
+    }
+  }
+
+  .card{
+    &__details-labels--1{
+      font-size: 14px;  
+      @include truncate-text; 
+    }
+
+    &__details-labels--2{
+      font-size: 12px;  
+      @include truncate-text; 
+    }
+  }
+}
+
+/* Extra Small Devices, Phones */ 
+@media only screen and (max-width : 480px) {
+  .header{
+    &__label{
+        font-size: 20px;       
+    }
+  }
+
+  .accordion{
+    &__label-1{
+      font-size: 18px;  
+    }
+  }
+
+  .card{
+    &__details-labels--1{
+      font-size: 14px;  
+      @include truncate-text;
+      margin-top:4px; 
+    }
+    &__details-labels--2{
+      font-size: 12px;  
+      @include truncate-text; 
+    }
+  }
+}
+
+/* Custom, iPhone Retina */ 
+@media only screen and (max-width : 320px) {
+  .header{
+    &__label{
+        font-size: 20px;       
+    }
+  }
+
+  .accordion{
+    &__label-1{
+      font-size: 18px;  
+    }
+  }
+
+  .card{
+    &__details-labels--1{
+      font-size: 14px;  
+      @include truncate-text;
+      margin-top:4px; 
+    }
+    &__details-labels--2{
+      font-size: 12px;  
+      @include truncate-text; 
+    }
+  }
+}
