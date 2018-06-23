@@ -3,7 +3,7 @@ import { Injectable, EventEmitter } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 
 import { HTTPCommonService } from '../../global-components/http-interceptor/app-http-common.service';
-import { Servers } from './../../models/servers.model';
+import { AppSettings } from './../../../config/config';
 
 
 //----------------------------------
@@ -18,7 +18,8 @@ export class FilterAndSearchService {
 
   public filteredServers = new EventEmitter();
 
-  constructor(private httpCommonService: HTTPCommonService) {
+  constructor(private httpCommonService: HTTPCommonService,
+              private appSettings: AppSettings) {
     //
   }
   getServers(): Observable<any> {
@@ -56,7 +57,7 @@ export class FilterAndSearchService {
       }
     }
 
-    const url = `http://85.17.31.99:4300/api/servers?${queryStr}`;
+    const url = `${this.appSettings.CONFIG.REST_API.API_END_POINT}?${queryStr}`;
     return this.httpCommonService.get(url);
   }
 

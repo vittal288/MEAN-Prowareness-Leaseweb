@@ -7,7 +7,9 @@
     <ul class="list-group">
       <li *ngIf="noOfServers !== 0"class="list-group-item d-flex justify-content-between align-items-center">
          <span class="text-dark-blue"> Number of Servers Matching Your Filter:</span>
-        <span class="badge badge-primary badge-pill">{{noOfServers}}</span>
+         <mat-chip-list>
+           <mat-chip color="primary" selected="true">{{noOfServers}}</mat-chip>
+         </mat-chip-list>
       </li>
       <li *ngIf="noOfServers === 0" class="list-group-item d-flex justify-content-between align-items-center u-margin-bottom-small ">
         <span class="text-red">No Records !!!</span>
