@@ -30,21 +30,12 @@ export class SliderComponent implements OnInit {
   }
 
   onChange(){
-    // console.log('Val',this.value);
-    // this.filterAndSearchService.sliderValue.emit(this.value);
     this.filterAndSearchService.selectedFilter['slider'] = this.value;
 
-    // this.utilityService.storeToSession('filter', this.filterAndSearchService.selectedFilter);
-
-
     this.filterAndSearchService.getServers().subscribe((results)=>{
-      console.log('RESULT SLIDER', results);
-    })
-    
-
-    // console.log('Slider val', this.value);
+      this.filterAndSearchService.filteredServers.emit(results);
+    });
   }
-
 
   ngOnInit() {
     //

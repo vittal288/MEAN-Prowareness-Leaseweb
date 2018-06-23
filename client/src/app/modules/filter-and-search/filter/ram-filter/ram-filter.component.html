@@ -3,7 +3,7 @@
       <h5 class="example-h5">Select RAM</h5>
       <section class="example-section">
         <mat-checkbox 
-          *ngFor="let ram of rams;let ind =index" 
+          *ngFor="let ram of rams | filter;let ind =index" 
           (change)="onChange($event,ind)"
           class="example-margin" 
           [value]="ram"

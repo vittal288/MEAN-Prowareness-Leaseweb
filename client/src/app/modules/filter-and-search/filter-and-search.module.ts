@@ -20,8 +20,11 @@ import { ServerDetailsComponent } from './server-details/server-details.componen
 import { FilterComponent } from './filter/filter.component';
 import { SliderComponent } from './filter/slider/slider.component';
 import { RamFilterComponent } from './filter/ram-filter/ram-filter.component';
-import { HddFilterComponent } from './filter/hdd-filter/hdd-filter.component';
-import { LocationFilterComponent } from './filter/location-filter/location-filter.component';
+import { DropDownsComponent } from './filter/drop-downs/drop-downs.component';
+
+
+// PIPES
+import { FilterPipe } from './../../global-components/pipes/filter.pipe';
 
 
 @NgModule({
@@ -33,8 +36,8 @@ import { LocationFilterComponent } from './filter/location-filter/location-filte
     FilterComponent,
     SliderComponent,
     RamFilterComponent,
-    HddFilterComponent,
-    LocationFilterComponent
+    DropDownsComponent,
+    FilterPipe
   ],
   imports: [
     FilterAndSearchRoutingModule,

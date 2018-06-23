@@ -10,6 +10,7 @@ import { UtilityService } from './../../../utility';
   styleUrls: ['./ram-filter.component.css']
 })
 export class RamFilterComponent implements OnInit {
+  // public rams = [2, 4, 8, 12, 16, 24, 32, 48, 64, 96];
   public rams = [2, 4, 8, 12, 16, 24, 32, 48, 64, 96];
   public selectedRams =[];
 
@@ -18,22 +19,16 @@ export class RamFilterComponent implements OnInit {
               private utilityService: UtilityService) { }
 
   ngOnInit() {
+    this.rams = this.filterAndSearchService.ramSizes;
   }
 
   onChange(event,index){
-    let obj = new Object();
-    obj['ram'] = event.source.value;
-    obj['selected'] = event.checked;
-    this.selectedRams.push(obj);
-
-
-
-    this.filterAndSearchService.selectedFilter['rams'] = this.selectedRams;
-    // this.utilityService.storeToSession('filter',this.filterAndSearchService.selectedFilter);
+   
+    this.filterAndSearchService.selectedRams.push(event.source.value);
 
     this.filterAndSearchService.getServers().subscribe((results)=>{
-      // console.log('RESULT RAMS', results);
-    })
+      this.filterAndSearchService.filteredServers.emit(results);
+    });
   }
 
 }

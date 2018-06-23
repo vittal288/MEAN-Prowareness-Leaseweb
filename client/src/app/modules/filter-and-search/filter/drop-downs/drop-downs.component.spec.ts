@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HddFilterComponent } from './hdd-filter.component';
+import { DropDownsComponent } from './drop-downs.component';
 
-describe('HddFilterComponent', () => {
-  let component: HddFilterComponent;
-  let fixture: ComponentFixture<HddFilterComponent>;
+describe('DropDownsComponent', () => {
+  let component: DropDownsComponent;
+  let fixture: ComponentFixture<DropDownsComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HddFilterComponent ]
+      declarations: [ DropDownsComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(HddFilterComponent);
+    fixture = TestBed.createComponent(DropDownsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

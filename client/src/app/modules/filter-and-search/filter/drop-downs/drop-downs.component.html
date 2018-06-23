@@ -1,0 +1,25 @@
+<div class="row">
+  <div class="col">
+    <mat-form-field>
+      <mat-select placeholder="Select Hard Drive" 
+                  [(ngModel)]="selectedHdd" 
+                  (openedChange)="onHddSelect(selectedHdd)">
+
+        <mat-option *ngFor="let hdd of hddTypes | filter" [value]="hdd" >
+          {{ hdd }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div class="col">
+    <mat-form-field>
+      <mat-select placeholder="Select Location" 
+                  [(ngModel)]="selectedLocation" 
+                  (openedChange)="onLocationSelect(selectedLocation)">
+        <mat-option *ngFor="let location of locations | filter" [value]="location">
+          {{ location }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+</div>
