@@ -1,10 +1,3 @@
-<!-- <ul style="height: 300px; overflow-y: auto">
-  <li *lazyFor="let item of servers" style="height: 10px;">
-    {{item.model}}
-  </li>
-</ul> -->
-
-
 <section class="section-servers">
   <div class="card" *ngFor="let server of servers;let i=index">
     <div class="card__side">
@@ -22,7 +15,7 @@
           </div>
           <div class="card__details-badges">
             <span class="badges badges-primary card__details-badges--1"> RAM:{{server.ram.memory}} {{server.ram.unit}} {{server.ram.type}}</span>
-            <span class="badges badges-tertiary card__details-badges--2">Hard Drive: {{server.hdd.memory}} {{convertToInt(server.hdd.unit) * 2}} {{server.hdd.type}}</span>
+            <span class="badges badges-tertiary card__details-badges--2">Hard Drive: {{server.hdd.memory * convertToInt(server.hdd.count)}} {{server.hdd.unit}} {{server.hdd.type}}</span>
           </div>
         </div>
       </div>
@@ -33,11 +26,6 @@
         <div class="card__cta">
           <div class="card__cta__price-box">
             <p class="card__cta__price-box-value">Price: {{server.price.currencySymbol }} {{convertCentToEur(server.price.amountCents)}}</p>
-            <p class="card__cta__price-box-btn">
-                <a [routerLink]="['serverDetails',i]" 
-                    (click)="onServerDetails()" 
-                    class="btn btn--white">Server Details</a>
-            </p>
           </div>
         </div>
       </div>

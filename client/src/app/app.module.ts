@@ -12,7 +12,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { NGMaterialImportsModule } from './ui-components-imports/material-imports.module';
 import { CoreModule } from './modules/core/core.module';
 import { FilterAndSearchModule } from './modules/filter-and-search/filter-and-search.module';
-import { LazyForModule } from './global-components/modules/lazyFor.module';
 
 
 
@@ -42,14 +41,11 @@ import { ToasterService, UtilityService } from './modules/utility';
     AppRoutingModule,
     BrowserAnimationsModule,
     BrowserModule,
-    // NoopAnimationsModule,
     CoreModule,
     FilterAndSearchModule,
     HttpClientModule,
-    LazyForModule,
     NGMaterialImportsModule,
     SlimLoadingBarModule.forRoot()
-    // SharedModule.forRoot(),
   ],
   providers: [
     HTTPCommonService,

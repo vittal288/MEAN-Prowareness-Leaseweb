@@ -12,7 +12,7 @@ import { Servers } from './../../models/servers.model';
   styleUrls: ['./filter-and-search.component.css']
 })
 export class FilterAndSearchComponent implements OnInit {
-  public servers: Servers[] = []; // implement model for this item
+  public servers:Servers[] = []; // 
   public noOfServers: number;
   constructor(private filterAndSearchService: FilterAndSearchService,
     private slimLoadingBarService: SlimLoadingBarService) { }
@@ -20,33 +20,21 @@ export class FilterAndSearchComponent implements OnInit {
   ngOnInit() {
     this.filterAndSearchService.getServers().subscribe((result) => {
 
-      this.servers = result;
-      this.servers['servers'].forEach((item) => {
+      this.servers = result.servers;
+      this.servers.forEach((item) => {
         this.filterAndSearchService.locations.push(item.location);
         this.filterAndSearchService.hddTypes.push(item.hdd.type);
         this.filterAndSearchService.ramSizes.push(item.ram.memory);
       });
-      this.noOfServers = this.servers['servers'].length;
+      this.noOfServers = result.servers.length;
+
+      console.log(this.noOfServers);
     });
 
 
     this.filterAndSearchService.filteredServers.subscribe((result) => {
-      this.servers = result;
-      this.noOfServers = this.servers['servers'].length;
+      this.servers = result.servers;
+      this.noOfServers = result.servers.length;
     })
-  }
-
-  startLoading() {
-    this.slimLoadingBarService.start(() => {
-      console.log('Loading complete');
-    });
-  }
-
-  stopLoading() {
-    this.slimLoadingBarService.stop();
-  }
-
-  completeLoading() {
-    this.slimLoadingBarService.complete();
   }
 }

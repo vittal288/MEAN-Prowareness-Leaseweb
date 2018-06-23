@@ -4,16 +4,13 @@ import { Routes, RouterModule } from '@angular/router';
 
 //COMPONENTS
 import { FilterAndSearchComponent } from './filter-and-search.component';
-import { ServerDetailsComponent } from './server-details/server-details.component';
 
 
 
 
 const filterAndSearchRoutes: Routes = [
     {
-        path: '', component: FilterAndSearchComponent, children: [
-            { path: 'serverDetails', component: ServerDetailsComponent }
-        ]
+        path: '', component: FilterAndSearchComponent
     },
 ];
 
