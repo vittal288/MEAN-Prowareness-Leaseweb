@@ -5,12 +5,12 @@ import { Routes, RouterModule } from '@angular/router';
 //COMPONENTS
 import { FilterAndSearchComponent } from './filter-and-search.component';
 
-
-
-
 const filterAndSearchRoutes: Routes = [
     {
-        path: '', component: FilterAndSearchComponent
+        path: '', redirectTo: 'servers',pathMatch:'full'
+    },
+    {
+        path: 'servers', component: FilterAndSearchComponent
     },
 ];
 

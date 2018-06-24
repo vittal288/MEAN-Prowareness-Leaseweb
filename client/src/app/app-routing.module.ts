@@ -13,7 +13,6 @@ import {
 const appRoutes: Routes = [
   {
     path: '',
-    // component:FilterAndSearchComponent
     loadChildren: './modules/filter-and-search/filter-and-search.module#FilterAndSearchModule'
   }
 ];

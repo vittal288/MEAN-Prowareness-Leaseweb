@@ -5,7 +5,21 @@ export class AppPage {
     return browser.get('/');
   }
 
-  getParagraphText() {
-    return element(by.css('app-root h1')).getText();
+  getHeaderLabel() {
+    return element(by.css('.header__label')).getText();
   }
+
+  getLogo(){
+    return element(by.css('.header__logo')).getAttribute('alt');
+  }
+
+  checkAppComponents(){
+    return element(by.css('.app-holder')).getInnerHtml();
+  }
+
+  getFooterLabel(){
+    return element(by.tagName('footer div span')).getText();
+  }
+
+  
 }

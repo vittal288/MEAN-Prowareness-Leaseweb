@@ -2,11 +2,11 @@
   <app-filter></app-filter>
 </section>
 
-<section>
+<section class="filterAndSearchSection">
   <div class="u-margin-top-small">
     <ul class="list-group">
       <li *ngIf="noOfServers !== 0"class="list-group-item d-flex justify-content-between align-items-center">
-         <span class="text-dark-blue"> Number of Servers Matching Your Filter:</span>
+         <span class="text-dark-blue noOfServersLbl"> Number of Servers Matching Your Filter:</span>
          <mat-chip-list>
            <mat-chip color="primary" selected="true">{{noOfServers}}</mat-chip>
          </mat-chip-list>
