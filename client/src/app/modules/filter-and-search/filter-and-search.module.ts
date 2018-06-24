@@ -44,7 +44,8 @@ import { FilterPipe } from './../../global-components/pipes/filter.pipe';
     SlimLoadingBarModule
   ],
   exports: [
-    FilterAndSearchComponent
+    FilterAndSearchComponent,
+    FilterComponent
   ],
   providers: [
     FilterAndSearchService
