@@ -12,14 +12,14 @@ export class FilterAndSearchService {
   public selectedFilter = new Object();
   public selectedRams = [];
 
-  public locations =[];
-  public hddTypes =[];
-  public ramSizes =[];
+  public locations = [];
+  public hddTypes = [];
+  public ramSizes = [];
 
   public filteredServers = new EventEmitter();
 
   constructor(private httpCommonService: HTTPCommonService,
-              private appSettings: AppSettings) {
+    private appSettings: AppSettings) {
     //
   }
   getServers(): Observable<any> {
@@ -35,7 +35,7 @@ export class FilterAndSearchService {
 
     // rams
     if (this.selectedRams.length > 0) {
-      ram = this.removeSameOccurrence(this.selectedRams);
+      ram = this.generateCommaSeperatedPattern(this.selectedRams);
       if (this.checkStrForEmpty(ram)) {
         queryStr += `ram=${ram}&`;
       }
@@ -62,7 +62,11 @@ export class FilterAndSearchService {
   }
 
   checkStrForEmpty(str): boolean {
-    if (str !== '' && str !== null && str !== undefined) return true;
+    if (str !== '' && str !== null && str !== undefined) {
+      return true;
+    } else {
+      return false;
+    }
   }
 
   isEmpty(obj) {
@@ -75,7 +79,7 @@ export class FilterAndSearchService {
 
   // there is some issue with this logic 
   // -->if we select multiple times the rams filter 
-  removeSameOccurrence(arr) {
+  generateCommaSeperatedPattern(arr) {
     let charMap = {};
     let tempArr = [];
 

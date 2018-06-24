@@ -26,6 +26,9 @@ import { AppSettings } from './../../../../../config/config';
 describe('RamFilterComponent', () => {
   let component: RamFilterComponent;
   let fixture: ComponentFixture<RamFilterComponent>;
+  let filterAndSearchService:FilterAndSearchService;
+  let hTTPCommonService:HTTPCommonService;
+  let appSettings:AppSettings;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -64,9 +67,22 @@ describe('RamFilterComponent', () => {
     fixture = TestBed.createComponent(RamFilterComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
+    filterAndSearchService = new FilterAndSearchService(hTTPCommonService,appSettings);
   });
-
+  
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  
+  it('should initialize the rams array to construct the checkboxes',()=>{
+    component.ngOnInit();
+    expect(component.rams).toEqual([]);
+  });
+  
+  
+  // it("should update the filter array by selected check boxes",()=>{
+  //   filterAndSearchService.selectedRams.push('1');
+  //   component.onChange('event1',1);
+  //   expect(filterAndSearchService.selectedRams.length).toEqual(1);
+  // });
 });
