@@ -17,7 +17,7 @@ import { FilterPipe } from './../../../global-components/pipes/filter.pipe';
 
 //SERVICES
 import { FilterAndSearchService } from './../filter-and-search.service';
-import { GlobalErrorHandler, GlobalHTTPErrorHanlder } from './../../../global-components/global-error-handler/global-error-handler';
+import { GlobalHTTPErrorHanlder } from './../../../global-components/global-error-handler/global-error-handler';
 import { HTTPCommonService } from './../../../global-components/http-interceptor/app-http-common.service';
 import { AppSettings } from './../../../../config/config';
 
@@ -43,7 +43,6 @@ describe('FilterComponent', () => {
       ],
       providers:[
         FilterAndSearchService,
-        GlobalErrorHandler, 
         GlobalHTTPErrorHanlder,
         HTTPCommonService,
         AppSettings,

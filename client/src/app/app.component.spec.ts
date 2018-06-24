@@ -23,7 +23,7 @@ import { RamFilterComponent } from './modules/filter-and-search/filter/ram-filte
 //SERVICES
 import { AppSettings } from './../config/config';
 import { HTTPCommonService } from './global-components/http-interceptor/app-http-common.service';
-import { GlobalErrorHandler, GlobalHTTPErrorHanlder } from './global-components/global-error-handler/global-error-handler';
+import { GlobalHTTPErrorHanlder } from './global-components/global-error-handler/global-error-handler';
 
 
 //PIPE
@@ -52,7 +52,6 @@ describe('AppComponent', () => {
       providers: [
         AppSettings,
         HTTPCommonService,
-        GlobalErrorHandler,
         GlobalHTTPErrorHanlder
       ],
       

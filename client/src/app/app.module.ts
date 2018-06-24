@@ -26,7 +26,7 @@ import { AppComponent } from './app.component';
 //SERVICES
 import { HTTPCommonService } from './global-components/http-interceptor/app-http-common.service';
 import { NoopInterceptor } from './global-components/http-interceptor/app-httpinterceptor.service';
-import { GlobalErrorHandler, GlobalHTTPErrorHanlder } from './global-components/global-error-handler/global-error-handler';
+import { GlobalHTTPErrorHanlder } from './global-components/global-error-handler/global-error-handler';
 import { AppSettings } from './../config/config';
 
 
@@ -55,7 +55,6 @@ import { AppSettings } from './../config/config';
       multi: true,
     },
     GlobalHTTPErrorHanlder,
-    GlobalErrorHandler,
     AppSettings
   ],
   bootstrap: [AppComponent]

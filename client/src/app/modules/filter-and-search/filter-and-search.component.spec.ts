@@ -21,7 +21,7 @@ import { SliderComponent } from './filter/slider/slider.component';
 //SERVICES
 import { FilterAndSearchService } from './filter-and-search.service';
 import { HTTPCommonService } from './../../global-components/http-interceptor/app-http-common.service';
-import { GlobalErrorHandler, GlobalHTTPErrorHanlder } from './../../global-components/global-error-handler/global-error-handler';
+import { GlobalHTTPErrorHanlder } from './../../global-components/global-error-handler/global-error-handler';
 import { AppSettings } from './../../../config/config';
 
 
@@ -55,7 +55,6 @@ describe('FilterAndSearchComponent', () => {
         FilterAndSearchService,
         HTTPCommonService,
         HttpClient,
-        GlobalErrorHandler,
         GlobalHTTPErrorHanlder,
         AppSettings,
         SlimLoadingBarService

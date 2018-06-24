@@ -1,3 +1,4 @@
+
 import { ErrorHandler, Injectable, Injector, Inject } from '@angular/core';
 import { LocationStrategy, PathLocationStrategy } from '@angular/common';
 import { HttpErrorResponse } from '@angular/common/http';
@@ -16,42 +17,43 @@ import { HTTPError } from './../../models/global/http-error.model';
 
 
 @Injectable()
-export class GlobalErrorHandler extends ErrorHandler {
+// export class GlobalErrorHandler extends ErrorHandler {
 
-  constructor(private injector: Injector,
-    private slimLoadingBarService: SlimLoadingBarService) {
+//   constructor(private injector: Injector,
+//     private slimLoadingBarService: SlimLoadingBarService) {
 
-    super();
-  }
-  handleError(error: any): void {
-    this.slimLoadingBarService.complete();
-    if (error != null) {
-      const message = error.message ? error.message : error.toString();
-      const location = this.injector.get(LocationStrategy);
-      const url = location instanceof PathLocationStrategy ? location.path() : '';
+//     super();
+//   }
 
-      // get the stack trace, lets grab the last 10 stacks only
-      StackTrace.fromError(error).then(stackframes => {
-        const stackString = stackframes
-          .splice(0, 20)
-          .map(function (sf) {
-            return sf.toString();
-          }).join('\n');
-        console.log('%c STACKTRACEJS INFO !!! ', 'background: #5bc0de; color: #FFF', { error, message, url, stack: stackString });
-      });
 
-      throw error;
-    } else {
-      super.handleError(error);
-    }
-  }
+//   handleError(error: any): void {
+//     this.slimLoadingBarService.complete();
+//     if (error != null) {
+//       const message = error.message ? error.message : error.toString();
+//       const location = this.injector.get(LocationStrategy);
+//       const url = location instanceof PathLocationStrategy ? location.path() : '';
 
-}
+//       // get the stack trace, lets grab the last 10 stacks only
+//       StackTrace.fromError(error).then(stackframes => {
+//         const stackString = stackframes
+//           .splice(0, 20)
+//           .map(function (sf) {
+//             return sf.toString();
+//           }).join('\n');
+//         console.log('%c STACKTRACEJS INFO !!! ', 'background: #5bc0de; color: #FFF', { error, message, url, stack: stackString });
+//       });
 
-export class GlobalHTTPErrorHanlder {
+//       throw error;
+//     } else {
+//       super.handleError(error);
+//     }
+//   }
+// }
+
+export class GlobalHTTPErrorHanlder extends ErrorHandler{
 
   constructor() {
-
+    super()
   }
 
 
