@@ -1,12 +1,12 @@
-import {Pipe, PipeTransform} from '@angular/core';
+import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-    name:'filter',
-    pure:false
+    name: 'filter',
+    pure: false
 })
 
-export class FilterPipe implements PipeTransform{
-    transform(value:any){
+export class FilterPipe implements PipeTransform {
+    transform(value: any, sort: boolean) {
         if (value.length === 0) {
             return value;
         }
@@ -24,6 +24,17 @@ export class FilterPipe implements PipeTransform{
         charMap.forEach((value, key) => {
             uniqueArr.push(key);
         });
-        return uniqueArr;
+
+        if (sort) {
+            return this.sortAnArray(uniqueArr)
+        }
+        return uniqueArr
+    }
+
+
+    sortAnArray(arr) {
+        return arr.sort((a, b) => {
+            return a - b;
+        });
     }
 }
